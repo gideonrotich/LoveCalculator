@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                         composable(
                             route = Screen.CalculatorResultsScreen.route + "/{fname}" + "/{sname}"
                         ){
-
+                            CalculatorResultsScreen()
                         }
                     }
 

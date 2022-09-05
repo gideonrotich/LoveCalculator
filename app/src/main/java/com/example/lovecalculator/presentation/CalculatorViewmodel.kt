@@ -8,10 +8,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.lovecalculator.common.Constants
 import com.example.lovecalculator.common.Resource
 import com.example.lovecalculator.domain.use_cases.CalculatorUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
+@HiltViewModel
 class CalculatorViewmodel @Inject constructor(
     private val calculatorUseCase: CalculatorUseCase,
     savedStateHandle: SavedStateHandle
@@ -27,7 +29,8 @@ class CalculatorViewmodel @Inject constructor(
     }
 
 
-    private fun getPercentage(fname:String,sname:String){
+
+     private fun getPercentage(fname:String,sname:String){
         calculatorUseCase(fname,sname).onEach { result ->
             when(result){
                 is Resource.Success -> {
