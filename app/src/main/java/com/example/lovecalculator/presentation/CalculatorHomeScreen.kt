@@ -1,20 +1,19 @@
 package com.example.lovecalculator.presentation
 
 import android.graphics.fonts.FontFamily
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.ClickableText
 import androidx.compose.foundation.text.KeyboardOptions
-import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
-import androidx.compose.material.TextField
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily.Companion.Cursive
@@ -23,6 +22,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -34,7 +34,7 @@ import com.example.lovecalculator.ui.theme.Purple700
 fun CalculatorHomeScreen(navController:NavHostController
 ) {
 
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier.fillMaxSize().background(color = Color.White)) {
         ClickableText(
             text = AnnotatedString("Love Calculator"),
             modifier = Modifier
@@ -61,6 +61,7 @@ fun CalculatorHomeScreen(navController:NavHostController
 
         Spacer(modifier = Modifier.height(20.dp))
         TextField(
+
             label = { Text(text = "Your name") },
             value = fname.value,
             onValueChange = { fname.value = it })
@@ -92,3 +93,6 @@ fun CalculatorHomeScreen(navController:NavHostController
 
     }
 }
+
+
+
